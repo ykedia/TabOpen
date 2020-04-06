@@ -1,0 +1,25 @@
+{
+  "name": "TabOpen",
+  "version": "1.0",
+  "description": "Expand links",
+  "permissions": ["activeTab", "webNavigation", "storage"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "page_action": {
+    "default_icon": {
+      "16": "images/logo_tabopen_active.png",
+      "32": "images/logo_tabopen_active.png",
+      "48": "images/logo_tabopen_active.png",
+      "128": "images/logo_tabopen_active.png"
+    }
+  },
+  "icons": {
+    "16": "images/logo_tabopen_active.png",
+    "32": "images/logo_tabopen_active.png",
+    "48": "images/logo_tabopen_active.png",
+    "128": "images/logo_tabopen_active.png"
+  },
+  "content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
+  "manifest_version": 2
+}
