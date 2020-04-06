@@ -1,16 +1,27 @@
 'use strict';
 
+chrome.runtime.onInstalled.addListener(function() {
+  chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
+    chrome.declarativeContent.onPageChanged.addRules([{
+      conditions: [new chrome.declarativeContent.PageStateMatcher({
+        pageUrl: {hostEquals: 'keep.google.com'},
+      })],
+      actions: [new chrome.declarativeContent.ShowPageAction()]
+    }]);
+  });
+});
+
 function onWebNav(details) {
     var refIndex = details.url.indexOf('#');
     var ref = refIndex >= 0 ? details.url.slice(refIndex+1) : '';
     if (ref.indexOf('NOTE/') == 0) {
-        chrome.pageAction.setIcon({tabId: details.tabId, path: 'images/logo_tabopen_active.png'});
+        chrome.pageAction.setIcon({tabId: details.tabId, path: 'images/logo_tabopen_active_48.png'});
         chrome.pageAction.setPopup({
             tabId: details.tabId,
             popup: 'popup.html'
         });
     } else {
-        chrome.pageAction.setIcon({tabId: details.tabId, path: 'images/logo_tabopen_inactive.png'});
+        chrome.pageAction.setIcon({tabId: details.tabId, path: 'images/logo_tabopen_active_48 copy.png'});
         chrome.pageAction.setPopup({
             tabId: details.tabId,
             popup: 'no_popup.html'
@@ -26,3 +37,4 @@ var filter = {
 chrome.webNavigation.onCommitted.addListener(onWebNav, filter);
 chrome.webNavigation.onHistoryStateUpdated.addListener(onWebNav, filter);
 chrome.webNavigation.onReferenceFragmentUpdated.addListener(onWebNav, filter);
+

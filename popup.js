@@ -4,7 +4,6 @@ let openLink = document.getElementById('openLink');
 var all_links;
 
 openLink.onclick = function() {
-	console.log("open Click on click - logs come bitch")
 	open_tabs(all_links);
 };
 

@@ -2,23 +2,25 @@
   "name": "TabOpen",
   "version": "1.0",
   "description": "Expand links",
-  "permissions": ["activeTab", "webNavigation", "storage"],
+  "permissions": ["activeTab", "webNavigation", "declarativeContent", "storage"],
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "persistent": false
   },
   "page_action": {
+    "default_popup": "popup.html",
     "default_icon": {
-      "16": "images/logo_tabopen_active.png",
-      "32": "images/logo_tabopen_active.png",
-      "48": "images/logo_tabopen_active.png",
-      "128": "images/logo_tabopen_active.png"
+      "16": "images/logo_tabopen_active_16.png",
+      "32": "images/logo_tabopen_active_32.png",
+      "48": "images/logo_tabopen_active_48.png",
+      "128": "images/logo_tabopen_active_128.png"
     }
   },
   "icons": {
-    "16": "images/logo_tabopen_active.png",
-    "32": "images/logo_tabopen_active.png",
-    "48": "images/logo_tabopen_active.png",
-    "128": "images/logo_tabopen_active.png"
+    "16": "images/logo_tabopen_active_16.png",
+    "32": "images/logo_tabopen_active_32.png",
+    "48": "images/logo_tabopen_active_48.png",
+    "128": "images/logo_tabopen_active_128.png"
   },
   "content_security_policy": "script-src 'self' https://example.com; object-src 'self'",
   "manifest_version": 2
