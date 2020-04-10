@@ -21,7 +21,7 @@ function onWebNav(details) {
             popup: 'popup.html'
         });
     } else {
-        chrome.pageAction.setIcon({tabId: details.tabId, path: 'images/logo_tabopen_active_48 copy.png'});
+        chrome.pageAction.setIcon({tabId: details.tabId, path: 'images/logo_tabopen_inactive_48.png'});
         chrome.pageAction.setPopup({
             tabId: details.tabId,
             popup: 'no_popup.html'
