@@ -16,12 +16,20 @@ function onWebNav(details) {
     var ref = refIndex >= 0 ? details.url.slice(refIndex+1) : '';
     if (ref.indexOf('NOTE/') == 0) {
         chrome.pageAction.setIcon({tabId: details.tabId, path: 'images/logo_tabopen_active_48.png'});
+        chrome.pageAction.setTitle({
+            tabId: details.tabId,
+            title: "Click on extention"
+        });
         chrome.pageAction.setPopup({
             tabId: details.tabId,
             popup: 'popup.html'
         });
     } else {
         chrome.pageAction.setIcon({tabId: details.tabId, path: 'images/logo_tabopen_inactive_48.png'});
+        chrome.pageAction.setTitle({
+            tabId: details.tabId,
+            title: "Select note first"
+        });
         chrome.pageAction.setPopup({
             tabId: details.tabId,
             popup: 'no_popup.html'

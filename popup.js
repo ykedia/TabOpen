@@ -23,7 +23,8 @@ function connect() {
         if (links_array.length == 0) {
             openLink.innerHTML = "No links";
             openLink.disabled = true;
-            openLink.style.background = 'lightgrey';
+            openLink.style.color = 'gray';
+            document.getElementById('icon').style.display = "none";
         }
         else {
             openLink.innerHTML = 'Open ' + links_array.length + ' Tabs';
