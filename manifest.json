@@ -8,7 +8,8 @@
     "persistent": false
   },
   "page_action": {
-    "default_popup": "popup.html",
+    "default_title": "Open links in Google Keep",
+    // "default_popup": "popup.html",
     "default_icon": {
       "16": "images/logo_tabopen_active_16.png",
       "32": "images/logo_tabopen_active_32.png",
